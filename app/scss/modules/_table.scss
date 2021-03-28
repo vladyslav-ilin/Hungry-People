@@ -1,0 +1,25 @@
+.table{
+padding: 50px 0;
+
+  &__wrapper{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  &__info{
+    text-align: center;
+    font-size: 12px;
+    color: rgba(51, 51, 51, 0.5);
+    &--text{
+      font-weight: 700;
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .table{
+    padding: 100px 0 65px;
+  }
+}

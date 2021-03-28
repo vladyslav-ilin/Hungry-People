@@ -1,0 +1,54 @@
+.burger {
+  @include size(40px);
+  @include pos($t: 20px, $r: 20px, $pos: fixed, $z: 100);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+
+  &::before,
+  &::after {
+    @include size(80%, 2px);
+    @include align(false, true, absolute);
+    content: "";
+    background: #fff;
+    transition: all 0.3s;
+  }
+  &::before {
+    top: 7px;
+  }
+  &::after {
+    bottom: 7px;
+  }
+
+  &__line {
+    @include size(75%, 2px);
+    @include align(true, true, absolute);
+    background: #fff;
+    transition: all 0.3s;
+  }
+
+  &--open {
+    border-radius: 50px;
+    &::before {
+      transform: rotate(45deg);
+      top: 18px;
+      left: 4px;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 18px;
+      left: 4px;
+    }
+    .burger__line {
+      width: 0;
+    }
+  }
+}
+
+@media (min-width: $laptop){
+  .burger{
+    display: none;
+  }
+}

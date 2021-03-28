@@ -1,0 +1,61 @@
+.header {
+  background: url("../images/header-mob.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  &__wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35vh;
+    position: relative;
+    color: #fff;
+    &::before {
+      @include size(1px, 70%);
+      @include align(false, true, absolute);
+      content: "";
+      background: rgba(255,255,255,.2);
+      bottom: 100px;
+    }
+  }
+
+  &__arrow {
+    @include align(false, true, absolute);
+    @include size(40px);
+    background: #fff;
+    text-align: center;
+    border-radius: 50px;
+    bottom: 50px;
+    display: inline-block;
+    &--icon {
+      line-height: 40px;
+      color: #333333;
+      font-size: 20px;
+    }
+    &::before {
+      @include size(60px);
+      @include align(true, true, absolute);
+      content: "";
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    &::after {
+      @include size(1px, 70px);
+      @include align(false, true, absolute);
+      content: "";
+      bottom: -80px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .header{
+    background: url('../images/header-bg.jpg') no-repeat center;
+    background-size: cover;
+    margin-bottom: 100px;
+  }
+}

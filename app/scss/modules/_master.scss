@@ -1,0 +1,23 @@
+.master {
+  padding: 50px 0;
+  background: url("../images/chef-mob.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+
+  &__wrapper{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: $tablet) {
+  .master {
+    padding-bottom: 100px;
+    &__info{
+      width: 45%;
+      margin-left: 70px;
+    }
+  }
+}

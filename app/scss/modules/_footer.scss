@@ -1,0 +1,11 @@
+.footer{
+   padding: 40px 0;
+   text-align: center;
+   background: rgba(0, 0, 0, 0.9);
+   &__text{
+      color: rgba(255, 255, 255, 0.5);
+   }
+   &__span{
+      font-weight: 700;
+   }
+}

@@ -1,0 +1,104 @@
+.event {
+   padding: 40px 0;
+   background: url("../images/chocolate-mob.jpg") center no-repeat;
+   background-size: cover;
+   position: relative;
+   &::before {
+      @include size(1px, calc(100% + 40px));
+      @include align(false, true);
+      @include pos($t: 0, $b: 0);
+      content: "";
+      top: 0;
+      background: hsla(0, 0%, 100%, 0.2);
+   }
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__content {
+      display: block;
+      margin-bottom: 40px;
+      position: relative;
+   }
+   &__img {
+      @include size(100%);
+      object-fit: cover;
+      display: block;
+      padding: 0 15px;
+   }
+
+   &__info {
+      color: #fff;
+      opacity: 0.5;
+      &--text {
+         white-space: nowrap;
+      }
+   }
+   // &__content {
+   //    display: block;
+   //    overflow: hidden;
+   //    flex: 0 0 100%;
+   //    margin-bottom: 20px;
+   //    position: relative;
+   // }
+   &__text {
+      @include size(60px, 100%);
+      @include pos($t: 0, $r: 0, $z: 5);
+      background: #000;
+      &--left{
+         @include pos($t: 0, $l: 0, $z: 5, $r: auto);
+      }
+   }
+   &__span {
+      font: 20px $title;
+      text-transform: uppercase;
+      color: #fff;
+      writing-mode: vertical-lr;
+      line-height: 60px;
+      margin-top: 15px;
+      &--left{
+         @include pos($b: 15px);
+      }
+   }
+   // &__img {
+   //    @include size(100%, 50%);
+   // }
+   // &__info {
+   //    color: #fff;
+   //    opacity: 0.5;
+   //    &--text {
+   //       white-space: nowrap;
+   //    }
+   // }
+}
+
+@media (min-width: $mobile) {
+   &__text {
+      @include size(80px, 100%);
+   }
+   &__span {
+      font: 24px $title;
+      &--left{
+         @include pos($b: 15px, $l:10px);
+      }
+   }
+}
+
+@media (min-width: $tablet) {
+   .event {
+      &__wrapper {
+         flex-direction: row;
+         margin-bottom: 40px;
+      }
+      &__content {
+         margin: 0 40px;
+      }
+      &__img{
+         padding: 0;
+      }
+   }
+}

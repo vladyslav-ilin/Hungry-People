@@ -1,0 +1,47 @@
+.swiper{
+  background: url('../images/chocolate-mob.jpg') no-repeat center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0 100px;
+  position: relative;
+
+&__content{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &--about{
+    justify-content: flex-start;
+  }
+}
+
+&-pagination{
+  @include align(false, true, absolute);
+  bottom: 40px;
+  &-bullet{
+    @include size(10px);
+    background: #fff;
+    opacity: .5;
+    margin: 0 10px;
+    &-active{
+      background: #fff;
+      opacity: 1;
+    }
+  }
+}
+}
+
+@media (min-width: $tablet) {
+  .swiper{
+    padding: 50px 0 100px;
+    &__info{
+      width: 46%;
+      margin-left: 60px;
+    }
+
+    &-pagination{
+      bottom: 45px;
+    }
+  }
+}

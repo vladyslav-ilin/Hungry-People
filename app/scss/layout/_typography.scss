@@ -1,0 +1,120 @@
+.subtitle {
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 12px;
+   letter-spacing: 6px;
+   margin-bottom: 15px;
+
+   &--master {
+      text-align: center;
+   }
+
+   &--event {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #fff;
+   }
+}
+
+.title {
+   font: 42px $title;
+   text-transform: uppercase;
+   margin-bottom: 35px;
+   padding-bottom: 45px;
+   position: relative;
+   text-align: center;
+   &::before {
+      @include size(60px, 5px);
+      @include align(false, true, absolute);
+      content: "";
+      background: $hover;
+      border-radius: 3px;
+      bottom: 0;
+   }
+
+   &--blog,
+   &--table {
+      font-size: 32px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+   }
+}
+
+.info-time {
+   display: none;
+}
+
+.logo {
+   display: none;
+}
+
+.info {
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 22px;
+   margin-bottom: 30px;
+}
+
+.text {
+   line-height: 24px;
+
+   &--master {
+      opacity: 0.9;
+   }
+}
+
+@media (min-width: $tablet) {
+   .info-time {
+      @include align($pos: absolute);
+      left: 15px;
+      display: block;
+      font-weight: 700;
+      font-size: 12px;
+      color: #fff;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg) translateY(50%);
+   }
+
+   .subtitle {
+      &--master {
+         margin-bottom: 50px;
+      }
+   }
+}
+
+@media (min-width: $laptop) {
+   .title {
+      font-size: 96px;
+      &--blog,
+      &--table {
+         font-size: 32px;
+      }
+   }
+
+   .logo {
+      display: block;
+      color: $hover;
+      font-size: 150px;
+      padding-top: 25px;
+      margin: 0 35px;
+      transition: all 0.3s ease;
+      &--scroll {
+         font-size: 50px;
+         padding-top: 5px;
+      }
+   }
+
+   .info {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 40px;
+      text-align: left;
+      &--tabs {
+         width: 45%;
+         margin: 0 auto;
+         margin-bottom: 50px;
+         text-align: center;
+      }
+   }
+}
