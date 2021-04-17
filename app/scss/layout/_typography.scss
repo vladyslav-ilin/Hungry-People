@@ -102,6 +102,10 @@
          font-size: 50px;
          padding-top: 5px;
       }
+      &:hover{
+         opacity: .7;
+         color: $hover;
+      }
    }
 
    .info {

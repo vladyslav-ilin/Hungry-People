@@ -17,11 +17,18 @@ function initMap() {
 }
 (function ($) {
    $(document).ready(function () {
-      // Code
+      //! Mask input
+      $("#phone").mask("+380 (999) 999-999");
+      $("#phone-1").mask("+380 (999) 999-999");
+      $("#date").mask("99/99/9999");
+
+      //! Code
       $('.burger').on('click', function () {
          $(this).toggleClass('burger--open');
          $('.menu__wrapper').toggleClass('menu__wrapper--open');
+         $('body').toggleClass('lock');
       });
+
    });
 
    $('.tabs__btn').on('click', function () {

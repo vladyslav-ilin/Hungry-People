@@ -11,6 +11,7 @@
    &__icon{
       margin-right: 5px;
       color: $hover;
+      transition: all .3s ease;
    }
    &__item{
       cursor: pointer;
@@ -46,9 +47,19 @@
          display: flex;
          flex-wrap: wrap;
          width: 50%;
+         margin-bottom: 0;
       }
       &__item{
          margin-right: 20px;
+      }
+      &__link{
+         transition: all .3s ease;
+         &:hover{
+            color: $hover;
+            .contact__icon{
+               color: rgba(51, 51, 51, 0.5);
+            }
+         }
       }
    }
 }

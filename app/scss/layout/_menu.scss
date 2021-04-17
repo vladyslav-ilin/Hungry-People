@@ -1,118 +1,122 @@
 .menu {
-  position: relative;
+   position: relative;
 
-  &__wrapper {
-    @include pos(fixed, 0, 0, 0, 0, 100);
-    @include size(0%, 100%);
-    transition: width 0.4s ease;
-    background: rgba(0, 0, 0, 0.95);
-    overflow: hidden;
+   &__wrapper {
+      @include pos(fixed, 0, 0, 0, 0, 100);
+      @include size(0%, 100%);
+      transition: width 0.4s ease;
+      background: rgba(0, 0, 0, 0.95);
+      overflow: hidden;
 
-    & .social {
-      @include align(false, true, $pos: absolute);
-      bottom: 100px;
-      display: block;
-      &__items {
-        display: flex;
+      & .social {
+         @include align(false, true, $pos: absolute);
+         bottom: 100px;
+         display: block;
+         &__items {
+            display: flex;
+         }
+         &__list {
+            margin: 0 15px;
+         }
       }
-      &__list {
-        margin: 0 15px;
+      &--open {
+         width: 80%;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         padding-top: 35px;
+         overflow: visible;
+
+         .menu {
+            &__list {
+               border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+               padding-bottom: 10px;
+               margin-bottom: 15px;
+               opacity: 1;
+            }
+
+            &__link {
+               letter-spacing: 2px;
+            }
+         }
       }
-    }
-    &--open {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      padding-top: 35px;
-      overflow: visible;
+   }
 
-      .menu {
-
-        &__list {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          padding-bottom: 10px;
-          margin-bottom: 15px;
-          opacity: 1;
-        }
-
-        &__link {
-          letter-spacing: 2px;
-        }
-      }
-    }
-    
-  }
-
-  &__list {
-    opacity: 0;
-  }
-  &__link {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+   &__list {
+      opacity: 0;
+   }
+   &__link {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+   }
 }
 
 @media (min-width: $tablet) {
-  .menu {
-    &__wrapper {
-      .social {
-        display: none;
-      }
+   .menu {
+      &__wrapper {
+         .social {
+            display: none;
+         }
 
-      &--open{
-        justify-content: center;
+         &--open {
+            justify-content: center;
+         }
       }
-
-    }
-  }
+   }
 }
 
 @media (min-width: $laptop) {
-  .menu {
-    &__wrapper {
-      @include size(100%, 100px);
-      @include pos(fixed, $t: 0, $l: 0, $r: auto, $b: auto);
-      overflow: visible;
-      background: transparent;
-      display: flex;
-      justify-content: center;
-      transition: all .3s ease;
-      &--scroll{
-       height: 60px;
-       background: rgba(0, 0, 0, 0.7);
-    }
-    }
-
-    &__items {
-      display: flex;
-      width: 100%;
-      justify-content: space-around;
-      align-items: center;
-      position: relative;
-      &::before {
-        @include size(100%, 1px);
-        @include pos($b: 0, $l: 0);
-        content: "";
-        background: rgba(255, 255, 255, 0.2);
-        transition: all .3s ease;
-      }
-      &--left {
-        &::before {
-          right: 0;
-          left: auto;
-        }
-      }
-      &--scroll{
-         &::before{
-        background: rgba(255, 255, 255, 0);
+   .menu {
+      &__wrapper {
+         @include size(100%, 100px);
+         @include pos(fixed, $t: 0, $l: 0, $r: auto, $b: auto);
+         overflow: visible;
+         background: transparent;
+         display: flex;
+         justify-content: center;
+         transition: all 0.3s ease;
+         &--scroll {
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
          }
       }
-    }
 
-    &__list {
-      opacity: 1;
-    }
-  }
+      &__items {
+         display: flex;
+         width: 100%;
+         justify-content: space-around;
+         align-items: center;
+         position: relative;
+         &::before {
+            @include size(100%, 1px);
+            @include pos($b: 0, $l: 0);
+            content: "";
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+         }
+         &--left {
+            &::before {
+               right: 0;
+               left: auto;
+            }
+         }
+         &--scroll {
+            &::before {
+               background: rgba(255, 255, 255, 0);
+            }
+         }
+        
+      }
+
+      &__list {
+         opacity: 1;
+      }
+       &__link{
+            transition: all .3s ease;
+            &:hover{
+               color: $hover;
+            }
+         }
+   }
 }

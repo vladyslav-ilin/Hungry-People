@@ -13,6 +13,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "jquery.maskedinput": "^1.4.1",
     "swiper": "^6.4.11"
   },
   "devDependencies": {

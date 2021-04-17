@@ -8,7 +8,8 @@ const SOURCES = {
 		'./node_modules/jquery/dist/jquery.min.js',
 		'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
 		'./node_modules/swiper/swiper-bundle.min.js',
-      'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'
+      './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+      './node_modules/jquery.maskedinput/src/jquery.maskedinput.js'
 	]
 };
 

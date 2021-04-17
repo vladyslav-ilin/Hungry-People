@@ -107,14 +107,14 @@
             </div>
          </div>
 
-         <a class="header__arrow" href="#">
+         <a class="header__arrow" href="#about">
             <i class="icon-arrow-down header__arrow--icon"></i>
          </a>
 
       </div>
    </header>
 
-   <section class="about">
+   <section class="about" id="about">
       <div class="container-fluid">
          <div class="about__wrapper">
             <div class="about__info">
@@ -183,20 +183,20 @@
                <div class="form__items">
                   <input class="form__text" type="text" placeholder="Name">
                   <input class="form__text" type="email" placeholder="Email">
-                  <input class="form__text" type="tel" placeholder="Phone">
+                  <input class="form__text" id="phone" type="tel" placeholder="Phone">
                   <select class="form__select" name="" id="">
                      <option value="" class="form__option">People</option>
                      <option value="" class="form__option">People</option>
                      <option value="" class="form__option">People</option>
                   </select>
-                  <input class="form__text" type="date" placeholder="Date (mm/dd)">
+                  <input class="form__text form__text--date" id="date" type="text" placeholder="Date (mm/dd)">
                   <select class="form__select" name="" id="">
                      <option value="" class="form__option">Time</option>
                      <option value="" class="form__option">Time</option>
                      <option value="" class="form__option">Time</option>
                   </select>
                </div>
-               <button class="form__btn" type="submit">book now</button>
+               <button class="form__btn" type="submit"><span class="form__btn--span">book now</span></button>
             </form>
 
 
@@ -217,8 +217,9 @@
    </section>
 
    <section class="swiper">
+      <h3 class="subtitle subtitle--master">specialties</h3>
       <div class="container-fluid">
-         <h3 class="subtitle subtitle--master">specialties</h3>
+
 
          <div class="swiper__container swiper-container">
             <div class="swiper__wrapper swiper-wrapper">
@@ -743,7 +744,7 @@
                <div class="form__items">
                   <input class="form__text contact__input" type="text" placeholder="Name">
                   <input class="form__text contact__input" type="email" placeholder="Email">
-                  <input class="form__text contact__input" type="tel" placeholder="Phone">
+                  <input class="form__text contact__input" id="phone-1" type="tel" placeholder="Phone">
                   <textarea class="form__text contact__text" placeholder="Message"></textarea>
                </div>
             </form>
@@ -762,7 +763,7 @@
                            class="icon-mail contact__icon"></i> office@mindblister.com</a>
                   </li>
                </ul>
-               <button class="form__btn contact__btn" type="submit">Send message</button>
+               <button class="form__btn contact__btn" type="submit"><span class="form__btn--span">Send message</span></button>
             </div>
          </div>
       </div>
@@ -777,7 +778,8 @@
    </footer>
 
    <!--build:js js/main.min.js -->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_2vG9Vj9Ys4XWhEvHCu2DgBMWJa5_Qyk&callback=initMap&libraries=&v=weekly"
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0o9164McliHhRXagkqKbscQfrBbFP0Nw&callback=initMap&libraries=&v=weekly"
       async></script>
    <script src="js/bundle.min.js"></script>
    <script src="js/main.js"></script>
