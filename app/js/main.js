@@ -2,6 +2,30 @@
 
 // const { EffectFade } = require("swiper");
 
+(function () {
+   let openSelect = document.querySelector('.select__header');
+   openSelect.addEventListener('click', addSelect);
+
+   let itemSelect = document.querySelectorAll('.select__item');
+   itemSelect.forEach(item => {
+      item.addEventListener('click', choiseSelect);
+   });
+})();
+
+function addSelect() {
+   let addClass = document.querySelector('.select');
+   addClass.classList.toggle('select--active');
+}
+
+function choiseSelect() {
+   let text = this.innerText;
+   let currentText = this.closest('.select').querySelector('.select__current')
+   console.log(currentText);
+   currentText.innerText = text;
+
+   addSelect();
+}
+
 function initMap() {
    //стили которые взяли с https://mapstyle.withgoogle.com/
    let coords;

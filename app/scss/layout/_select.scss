@@ -1,0 +1,50 @@
+.select {
+   position: relative;
+   &--active{
+      .select__list{
+         max-height: 300%;
+         display: block;
+      }
+   }
+   &__header {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+   }
+   &__current {
+      color: #333333;
+      font-size: 14px;
+      opacity: 0.8;
+   }
+   &__icon {
+      height: 15px;
+      width: 15px;
+   }
+   &__list {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      border-top: transparent;
+      max-height: 0;
+      transition: all 0.3s ease-in;
+      overflow: hidden;
+      border-radius: 5px;
+      z-index: 5;
+      background: #e5e5e5;
+   }
+   &__item {
+      color: #333333;
+      font-size: 14px;
+      text-align: left;
+      opacity: 0.8;
+      cursor: pointer;
+      padding: 15px 20px;
+      transition: 0.15s background ease-in;
+      border-top: 1px solid #cec8c8;
+      &:hover {
+         background: #cec8c8;
+      }
+   }
+}
