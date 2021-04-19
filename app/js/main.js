@@ -13,9 +13,15 @@
 })();
 
 function addSelect() {
-   let addClass = document.querySelector('.select');
-   addClass.classList.toggle('select--active');
+   let addClass = document.querySelectorAll('.select');
+   addClass.forEach(item => {
+      item.addEventListener('click', toggleInput);
+   });
 }
+
+function toggleInput() {
+   this.classList.toggle('select--active')
+};
 
 function choiseSelect() {
    let text = this.innerText;
