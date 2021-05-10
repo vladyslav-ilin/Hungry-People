@@ -3,8 +3,10 @@
 // const { EffectFade } = require("swiper");
 
 (function () {
-   let openSelect = document.querySelector('.select__header');
-   openSelect.addEventListener('click', addSelect);
+   let openSelect = document.querySelectorAll('.select__header');
+   openSelect.forEach(item => {
+      item.addEventListener('click', addSelect);
+   });
 
    let itemSelect = document.querySelectorAll('.select__item');
    itemSelect.forEach(item => {
@@ -21,6 +23,13 @@ function addSelect() {
 
 function toggleInput() {
    this.classList.toggle('select--active')
+
+   window.addEventListener('click', event => {
+      const target = event.target;
+      if (!target.closest('.select__header') && !target.closest('.select__body')) {
+         this.classList.remove('select--active');
+      }
+   })
 };
 
 function choiseSelect() {
@@ -45,6 +54,7 @@ function initMap() {
       disableDefaultUI: true,
    });
 }
+
 (function ($) {
    $(document).ready(function () {
       //! Mask input
@@ -59,6 +69,91 @@ function initMap() {
          $('body').toggleClass('lock');
       });
 
+
+      // Burger Scroll Menu
+      let sections = {
+         header: $('#header').offset().top,
+         about: $('#about').offset().top,
+         master: $('#master').offset().top,
+         table: $('#table').offset().top,
+         swiper: $('#swiper').offset().top,
+         tabs: $('#tabs').offset().top,
+         event: $('#event').offset().top,
+         fancybox: $('#fancybox').offset().top,
+         contact: $('#contact').offset().top,
+         map: $('#map').offset().top,
+         footer: $('#footer').offset().top
+      }
+
+      console.log('POSITIONS =>', sections);
+
+      $(window).scroll(() => {
+         let scrTop = ($(document).scrollTop() + $(window).height() / 12.2);
+         let position = '';
+         let colorBgr = $('.burger');
+
+         if (scrTop < sections.about) {
+            position = 'header';
+            colorBgr.css({
+               'background': 'transparent',
+            })
+         } else if (scrTop >= sections.about && scrTop < sections.master) {
+            position = 'about';
+            colorBgr.css({
+               'background': 'rgba(0,0,0,.5)',
+            })
+         } else if (scrTop >= sections.master && scrTop < sections.table) {
+            position = 'master';
+            colorBgr.css({
+               'background': 'transparent',
+            })
+         } else if (scrTop >= sections.table && scrTop < sections.swiper) {
+            position = 'table';
+            colorBgr.css({
+               'background': 'rgba(0,0,0,.5)',
+            })
+         } else if (scrTop >= sections.swiper && scrTop < sections.tabs) {
+            position = 'swiper';
+            colorBgr.css({
+               'background': 'transparent',
+            })
+         } else if (scrTop >= sections.tabs && scrTop < sections.event) {
+            position = 'tabs';
+            colorBgr.css({
+               'background': 'rgba(0,0,0,.5)',
+            })
+         } else if (scrTop >= sections.event && scrTop < sections.fancybox) {
+            position = 'event';
+            colorBgr.css({
+               'background': 'transparent',
+            })
+         } else if (scrTop >= sections.fancybox && scrTop < sections.contact) {
+            position = 'fancybox';
+            colorBgr.css({
+               'background': 'transparent',
+            })
+         } else if (scrTop >= sections.contact && scrTop < sections.map) {
+            position = 'contact';
+            colorBgr.css({
+               'background': 'rgba(0,0,0,.5)',
+            })
+         } else if (scrTop >= sections.map && scrTop < sections.footer) {
+            position = 'map';
+            colorBgr.css({
+               'background': 'rgba(0,0,0,.5)',
+            })
+         } else {
+            position = 'footer';
+            colorBgr.css({
+               'background': 'transparent',
+            })
+         }
+         
+
+         // $('.burger').find(`[href="#${position}"]`).addClass('burger--active')
+     
+     
+      });
    });
 
    $('.tabs__btn').on('click', function () {
@@ -75,17 +170,17 @@ function initMap() {
       $(item).addClass('tabs__wrapper--active');
    });
 
-$(window).scroll(() => {
-   if ($(window).scrollTop() > 5) {
-      $('.menu__wrapper').addClass('menu__wrapper--scroll');
-      $('.menu__items').addClass('menu__items--scroll');
-      $('.logo').addClass('logo--scroll');
-   } else {
-      $('.menu__wrapper').removeClass('menu__wrapper--scroll');
-      $('.menu__items').removeClass('menu__items--scroll');
-      $('.logo').removeClass('logo--scroll');
-   }
-});
+   $(window).scroll(() => {
+      if ($(window).scrollTop() > 5) {
+         $('.menu__wrapper').addClass('menu__wrapper--scroll');
+         $('.menu__items').addClass('menu__items--scroll');
+         $('.logo').addClass('logo--scroll');
+      } else {
+         $('.menu__wrapper').removeClass('menu__wrapper--scroll');
+         $('.menu__items').removeClass('menu__items--scroll');
+         $('.logo').removeClass('logo--scroll');
+      }
+   });
 })(jQuery);
 
 new Swiper('.swiper__container', {

@@ -1,7 +1,7 @@
 .select {
    position: relative;
-   &--active{
-      .select__list{
+   &--active {
+      .select__list {
          max-height: 300%;
          display: block;
       }

@@ -6,7 +6,7 @@
    <meta name="description" content="Starter">
    <meta name="author" content="Admin">
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-   <title>Starter</title>
+   <title>Hungry People</title>
 
    <link rel="icon" href="images/favicon.png">
 
@@ -22,7 +22,7 @@
 
 <body>
 
-   <header class="header">
+   <header class="header" id="header">
       <h3 class="info-time">
          Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM
       </h3>
@@ -142,7 +142,7 @@
          <div>
    </section>
 
-   <section class="master">
+   <section class="master" id="master">
       <div class="container-fluid">
          <h3 class="subtitle subtitle--master">our team</h3>
          <div class="master__wrapper">
@@ -172,7 +172,7 @@
       </div>
    </section>
 
-   <section class="table">
+   <section class="table" id="table">
       <div class="container-fluid">
 
          <div class="table__wrapper">
@@ -195,12 +195,7 @@
                         <li class="select__item">People 3</li>
                      </ul>
                   </div>
-                  
-                  <!-- <select class="form__select" name="" id="">
-                     <option value="" class="form__option">People</option>
-                     <option value="" class="form__option">People</option>
-                     <option value="" class="form__option">People</option>
-                  </select> -->
+
                   <input class="form__text form__text--date" id="date" type="text" placeholder="Date (mm/dd)">
                   <div class="select form__text select">
                      <div class="select__header">
@@ -234,7 +229,7 @@
       </div>
    </section>
 
-   <section class="swiper">
+   <section class="swiper" id="swiper">
       <h3 class="subtitle subtitle--master">specialties</h3>
       <div class="container-fluid">
 
@@ -324,7 +319,7 @@
       </div>
    </section>
 
-   <section class="tabs">
+   <section class="tabs" id="tabs">
       <div class="container-fluid">
          <h2 class="title title--blog">
             delicious menu
@@ -690,7 +685,7 @@
       </div>
    </section>
 
-   <section class="event">
+   <section class="event" id="event">
       <div class="container-fluid">
          <div class="subtitle subtitle--event">private events</div>
 
@@ -722,7 +717,7 @@
       </div>
    </section>
 
-   <section class="fancybox">
+   <section class="fancybox" id="fancybox">
       <div class="fancybox__wrapper">
          <ul class="fancybox__list">
             <li class="fancybox__item">
@@ -748,7 +743,8 @@
          </ul>
       </div>
    </section>
-   <section class="contact">
+
+   <section class="contact" id="contact">
       <div class="container-fluid">
          <h2 class="title title--blog">
             contact
@@ -787,18 +783,19 @@
       </div>
    </section>
 
-   <section class="map">
+   <section class="map" id="map">
       <div id="map"></div>
    </section>
 
-   <footer class="footer">
-      <div class="footer__text">&#169 Copyright <span class="footer__span">Mindblister</span> 2019</div>
+   <footer class="footer" id="footer">
+      <div class="footer__text">&#169 Copyright <span class="footer__span">Mindblister</span> 2021</div>
    </footer>
 
    <!--build:js js/main.min.js -->
    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0o9164McliHhRXagkqKbscQfrBbFP0Nw&callback=initMap&libraries=&v=weekly"
-      async></script>
+      async>
+   </script>
    <script src="js/bundle.min.js"></script>
    <script src="js/main.js"></script>
    <!--endbuild-->
