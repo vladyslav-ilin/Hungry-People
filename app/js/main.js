@@ -88,7 +88,7 @@ function initMap() {
       console.log('POSITIONS =>', sections);
 
       $(window).scroll(() => {
-         let scrTop = ($(document).scrollTop() + $(window).height() / 12.2);
+         let scrTop = ($(document).scrollTop() + $(window).height() / 13);
          let position = '';
          let colorBgr = $('.burger');
 
@@ -132,20 +132,20 @@ function initMap() {
             colorBgr.css({
                'background': 'transparent',
             })
-         } else if (scrTop >= sections.contact && scrTop < sections.map) {
-            position = 'contact';
-            colorBgr.css({
-               'background': 'rgba(0,0,0,.5)',
-            })
-         } else if (scrTop >= sections.map && scrTop < sections.footer) {
-            position = 'map';
-            colorBgr.css({
-               'background': 'rgba(0,0,0,.5)',
-            })
+         // } else if (scrTop >= sections.contact && scrTop < sections.map) {
+         //    position = 'contact';
+         //    colorBgr.css({
+         //       'background': 'rgba(0,0,0,.5)',
+         //    })
+         // } else if (scrTop >= sections.map && scrTop < sections.footer) {
+         //    position = 'map';
+         //    colorBgr.css({
+         //       'background': 'rgba(0,0,0,.5)',
+         //    })
          } else {
             position = 'footer';
             colorBgr.css({
-               'background': 'transparent',
+               'background': 'rgba(0,0,0,.5)',
             })
          }
          
